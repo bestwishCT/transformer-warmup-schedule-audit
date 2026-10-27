@@ -1,0 +1,43 @@
+{
+  "status": "ranges_valid",
+  "errors": [],
+  "semantic": "not_evaluated",
+  "excerpt_count": 5,
+  "excerpts": [
+    {
+      "decision": "D1",
+      "source_id": "P7",
+      "start_line": 8,
+      "end_line": 13,
+      "text": "We used the Adam optimizer [20] with β1 = 0.9, β2 = 0.98 and ϵ = 10 −9. We varied the learning\nrate over the course of training, according to the formula:\nlrate = d_model^(-0.5) * min(step_num^(-0.5), step_num * warmup_steps^(-1.5)) (3)\nThis corresponds to increasing the learning rate linearly for the first warmup_steps training steps,\nand decreasing it thereafter proportionally to the inverse square root of the step number. We used\nwarmup_steps = 4000."
+    },
+    {
+      "decision": "D2",
+      "source_id": "P7",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "lrate = d_model^(-0.5) * min(step_num^(-0.5), step_num * warmup_steps^(-1.5)) (3)\nThis corresponds to increasing the learning rate linearly for the first warmup_steps training steps,\nand decreasing it thereafter proportionally to the inverse square root of the step number. We used"
+    },
+    {
+      "decision": "D3",
+      "source_id": "P7",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "lrate = d_model^(-0.5) * min(step_num^(-0.5), step_num * warmup_steps^(-1.5)) (3)\nThis corresponds to increasing the learning rate linearly for the first warmup_steps training steps,\nand decreasing it thereafter proportionally to the inverse square root of the step number. We used\nwarmup_steps = 4000."
+    },
+    {
+      "decision": "D4",
+      "source_id": "P7",
+      "start_line": 11,
+      "end_line": 13,
+      "text": "This corresponds to increasing the learning rate linearly for the first warmup_steps training steps,\nand decreasing it thereafter proportionally to the inverse square root of the step number. We used\nwarmup_steps = 4000."
+    },
+    {
+      "decision": "D4",
+      "source_id": "P7",
+      "start_line": 2,
+      "end_line": 6,
+      "text": "We trained our models on one machine with 8 NVIDIA P100 GPUs. For our base models using\nthe hyperparameters described throughout the paper, each training step took about 0.4 seconds. We\ntrained the base models for a total of 100,000 steps or 12 hours. For our big models,(described on the\nbottom line of table 3), step time was 1.0 seconds. The big models were trained for 300,000 steps\n(3.5 days)."
+    }
+  ]
+}

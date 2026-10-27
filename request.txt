@@ -1,0 +1,21 @@
+独立记录号 48e88ad6-44d0-4d1a-84cb-bc5d037f7100（不含任务语义）
+论文《Attention Is All You Need》(arXiv:1706.03762v7)阅读问题：warmup 后学习率怎样降：min 两分支与 step 单位。只依据给定证据；教学推导标为推导，未定义或未实测须说明。
+D1：完整写公式(3)，解释 d_model、step_num、warmup_steps，4000 的单位是step还是epoch？给出Adam三个超参。
+D2：解出两分支交点，说明哪支在warmup前/后被min选中；为什么step=0不能直接代负幂？
+D3：d_model=512、warmup=4000时，计算step=1000/4000/16000的学习率与相对峰值比例。固定step时换d_model=1024会怎样？
+D4：预热后是否按step倒数或指数下降？文中日程能否证明4000对全部模型最优？硬件时间与step数如何区分？
+输出合法JSON对象，decisions数组依次D1-D4，每项含id、answer、evidence数组(每项source_id、start_line、end_line)、limitations。source_id仅允许['P7']。行号整数无前导零。每项完整回答，保留条件，约1600中文字。
+SOURCE P7 PDF physical page 7
+1: 5.2 Hardware and Schedule
+2: We trained our models on one machine with 8 NVIDIA P100 GPUs. For our base models using
+3: the hyperparameters described throughout the paper, each training step took about 0.4 seconds. We
+4: trained the base models for a total of 100,000 steps or 12 hours. For our big models,(described on the
+5: bottom line of table 3), step time was 1.0 seconds. The big models were trained for 300,000 steps
+6: (3.5 days).
+7: 5.3 Optimizer
+8: We used the Adam optimizer [20] with β1 = 0.9, β2 = 0.98 and ϵ = 10 −9. We varied the learning
+9: rate over the course of training, according to the formula:
+10: lrate = d_model^(-0.5) * min(step_num^(-0.5), step_num * warmup_steps^(-1.5)) (3)
+11: This corresponds to increasing the learning rate linearly for the first warmup_steps training steps,
+12: and decreasing it thereafter proportionally to the inverse square root of the step number. We used
+13: warmup_steps = 4000.

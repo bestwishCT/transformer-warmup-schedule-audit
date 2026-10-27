@@ -1,0 +1,27 @@
+{
+  "teaching_only": true,
+  "unit": "learning rate per optimizer step",
+  "rows": [
+    {
+      "step": 1000,
+      "lr": 0.0001746928107421711,
+      "relative_peak": 0.25000000000000006,
+      "lr_model1024": 0.00012352647110032734
+    },
+    {
+      "step": 4000,
+      "lr": 0.0006987712429686843,
+      "relative_peak": 1.0,
+      "lr_model1024": 0.0004941058844013092
+    },
+    {
+      "step": 16000,
+      "lr": 0.00034938562148434214,
+      "relative_peak": 0.5,
+      "lr_model1024": 0.0002470529422006546
+    }
+  ],
+  "width_ratio": 0.7071067811865475,
+  "base_4000_steps_seconds_approx": 1600.0,
+  "big_4000_steps_seconds_approx": 4000
+}
